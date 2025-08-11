@@ -88,13 +88,12 @@ const config = {
 | `bun clean` | Clean dist directory |
 | `bun typecheck` | Run TypeScript type checking |
 
-## 🔧 Development Workflow
+## 🔧 Development Workflow (macOS)
 
 1. **Enable PlayerDebugMode** using ZXP/UXP Installer
 2. Run `bun dev` to start development
 3. The extension will be auto-symlinked to:
-   - macOS: `~/Library/Application Support/Adobe/CEP/extensions/`
-   - Windows: `%APPDATA%\Adobe\CEP\extensions\`
+   - `~/Library/Application Support/Adobe/CEP/extensions/`
 4. Open your Adobe application
 5. Go to Window → Extensions → Your Extension Name
 

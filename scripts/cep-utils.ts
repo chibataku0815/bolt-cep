@@ -125,19 +125,8 @@ export async function generateDebugFile(config: CEPConfig, outputPath: string) {
  * Create symlink in CEP extensions folder for development
  */
 export async function createSymlink(sourceDir: string, extensionId: string) {
-  const os = platform();
-  let extensionsPath: string;
-  
-  if (os === 'darwin') {
-    // macOS
-    extensionsPath = join(homedir(), 'Library', 'Application Support', 'Adobe', 'CEP', 'extensions');
-  } else if (os === 'win32') {
-    // Windows
-    extensionsPath = join(process.env.APPDATA || '', 'Adobe', 'CEP', 'extensions');
-  } else {
-    console.warn('  ⚠ Unsupported OS for symlink creation');
-    return;
-  }
+  // macOS only
+  const extensionsPath = join(homedir(), 'Library', 'Application Support', 'Adobe', 'CEP', 'extensions');
   
   const linkPath = join(extensionsPath, extensionId);
   
