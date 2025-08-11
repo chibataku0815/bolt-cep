@@ -6,35 +6,13 @@ import { ResArgs } from "meta-bolt/dist/types";
 
 export const frameworkOptions: ArgOpt[] = [
   {
-    value: "svelte",
-    label: "Svelte",
-    files: [
-      "src/js/main/index-svelte.ts",
-      "src/js/main/main.svelte",
-      "src/js/main/vite-env.d.ts",
-      "package.svelte.jsonc",
-      "tsconfig.svelte.json",
-    ],
-  },
-  {
     value: "react",
     label: "React",
     files: [
       "src/js/main/index-react.tsx",
       "src/js/main/main.tsx",
-      "package.react.jsonc",
-      "tsconfig.react.json",
-    ],
-  },
-  {
-    value: "vue",
-    label: "Vue",
-    files: [
-      "src/js/main/index-vue.ts",
-      "src/js/main/main.vue",
-      "src/js/main/env.d.ts",
-      "package.vue.jsonc",
-      "tsconfig.vue.json",
+      "package.json",
+      "tsconfig.json",
     ],
   },
 ];
@@ -68,16 +46,8 @@ const initData: BoltInitData = {
       ".prettierrc",
       ".env.example",
     ],
-    globalExcludes: [".env", "yarn-error.log", "package.json", "tsconfig.json"],
+    globalExcludes: [".env", "bun.lockb", "package.json", "tsconfig.json"],
     fileRenames: [
-      ["package.svelte.jsonc", "package.json"],
-      ["package.react.jsonc", "package.json"],
-      ["package.vue.jsonc", "package.json"],
-
-      ["tsconfig.svelte.json", "tsconfig.json"],
-      ["tsconfig.react.json", "tsconfig.json"],
-      ["tsconfig.vue.json", "tsconfig.json"],
-
       [".npmignore", ".gitignore"],
     ],
   },

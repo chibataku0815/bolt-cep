@@ -1,28 +1,47 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    // Bun and React configuration
+    "target": "ES2020",
     "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": false,
-    "noEmit": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
+    
+    // Module resolution
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    
+    // Type checking
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    // Interop
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    
+    // Paths
+    "baseUrl": ".",
     "paths": {
-      "@esTypes/*": ["./src/jsx"]
-    }
+      "@/*": ["src/*"],
+      "@jsx/*": ["src/jsx/*"],
+      "@lib/*": ["src/js/lib/*"]
+    },
+    
+    // Bun specific
+    "types": ["bun-types", "@types/react", "@types/react-dom"]
   },
-  "include": ["./src"],
+  "include": [
+    "src/**/*",
+    "scripts/**/*",
+    "cep.config.ts"
+  ],
   "exclude": [
-    "./src/jsx",
-    "./src/js/template-*",
-    "node_modules/@types/react/index.d.ts"
+    "node_modules",
+    "dist",
+    "*.config.js"
   ]
 }

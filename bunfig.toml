@@ -1,0 +1,28 @@
+# Bun configuration for CEP Extension development
+
+# Build configuration
+[build]
+target = "browser"
+format = "iife"
+minify = false
+sourcemap = "inline"
+
+# TypeScript configuration
+[test]
+preload = ["./src/js/lib/CSInterface.ts"]
+
+# JSX configuration
+jsx = "react"
+jsxFactory = "React.createElement"
+jsxFragment = "React.Fragment"
+
+# Development server
+[server]
+port = 3000
+
+# Install configuration
+[install]
+# Use exact versions
+exact = true
+# Save peer dependencies
+peer = true
